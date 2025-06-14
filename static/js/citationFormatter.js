@@ -1,6 +1,7 @@
 // Citation formatting functions for different academic styles
 
-export const formatCitation = (reference, format) => {
+// Assign to window object to make it globally accessible
+window.formatCitation = (reference, format) => {
   if (!reference.type || !reference.title) return ''
   
   const authors = reference.authors.filter(a => a.trim()).join(', ')
@@ -115,4 +116,3 @@ const formatHarvard = (ref, authors) => {
       return `${authors} ${ref.year}, '${ref.title}', ${ref.journal || ref.publisher}.`
   }
 }
-

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference Formatter - Convert Citations to Any Format</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>Reference Formatter</h1>
+        <p>Convert your references to any citation format</p>
+    </header>
+
+    <main class="main-content">
+        <!-- Left Column: Input Section -->
+        <div>
+            <div class="card references-card">
+                <h2>Add References</h2>
+                <p>Enter your reference information below</p>
+                <div id="references-container">
+                    <!-- Reference items will be dynamically added here by main.js -->
+                    <!-- The static reference item below has been removed -->
+                </div>
+                <button id="add-another-reference-btn">Add Another Reference</button>
+            </div>
+        </div>
+        <!-- Right Column: Output Section -->
+        <div>
+            <div class="card citation-format-card">
+                <h2>Citation Format</h2>
+                <p>Choose your preferred citation style</p>
+                    <div>
+                        <label for="citation-format-select">Citation Format:</label>
+                        <select id="citation-format-select" name="citation-format">
+                            <option value="ieee">IEEE</option>
+                            <option value="apa7">APA 7th Edition</option>
+                            <option value="mla9">MLA 9th Edition</option>
+                            <option value="chicago17">Chicago 17th Edition</option>
+                            <!-- Add more formats as needed -->
+                        </select>
+                    </div>
+                    <button id="generate-citations-btn">Generate Citations</button>
+                </div>
+
+                <div class="card formatted-references-card" id="formatted-references-section" style="display: none;">
+                    <h2>Formatted References</h2>
+                    <p id="formatted-references-description">Your references in [Selected Format] format</p>
+                    <textarea id="formatted-output-area" readonly rows="10" placeholder="Formatted citations will appear here..."></textarea>
+                    <div class="button-group">
+                        <button id="copy-output-btn">Copy</button>
+                        <button id="download-output-btn">Download</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <hr>
+        <p>&copy; 2024 Reference Formatter. All rights reserved.</p>
+        <p>Disclaimer: This tool is for informational purposes only and does not guarantee compliance with all citation standards. Always double-check your citations.</p>
+    </footer>
+</div>
+    <!-- Ensure citationFormatter.js is loaded first, then main.js -->
+    <!-- If using ES6 modules, type="module" is needed. For now, assuming global scope or main.js handles it. -->
+    <script src="{{ url_for('static', filename='js/citationFormatter.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
