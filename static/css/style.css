@@ -1,0 +1,60 @@
+body {
+    padding: 20px; /* Add some padding around the page */
+}
+
+.container {
+    max-width: 1200px; /* Limit overall width */
+    margin: 0 auto; /* Center the container */
+}
+
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    gap: 20px; /* Space between columns */
+}
+
+/* Add some spacing for cards/sections */
+.card {
+    border: 1px solid #e0e0e0; /* Pico default is subtle, add a bit more emphasis if needed */
+    padding: 20px;
+    border-radius: 8px; /* Pico uses variables, this is a static fallback */
+    margin-bottom: 20px;
+}
+
+/* Style for the header */
+.header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.header h1 {
+    font-size: 2.5em; /* Make title larger */
+    margin-bottom: 10px;
+}
+
+.header p {
+    font-size: 1.2em;
+    color: #555;
+}
+
+/* Basic styling for button groups or multiple buttons */
+.button-group {
+    display: flex;
+    gap: 10px; /* Space between buttons */
+}
+
+/* Ensure textarea for output is sufficiently large */
+#formatted-output-area {
+    min-height: 300px;
+    font-family: monospace;
+}
+
+/* Footer styling */
+footer {
+    margin-top: 40px;
+    text-align: center;
+    color: #777;
+}
+footer hr {
+    margin-bottom: 20px;
+}
